@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeingTheWorst.MvxPlugins.Az
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeingTheWorst.MvxPlugins.AzureMobileAuthN.WindowsPhone", "BeingTheWorst.MvxPlugins.AzureMobileAuthN.WindowsPhone\BeingTheWorst.MvxPlugins.AzureMobileAuthN.WindowsPhone.csproj", "{F8B80845-0F2C-4358-9A78-9B4827D8DF8B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AzureMobileAuthN.Plugin", "AzureMobileAuthN.Plugin", "{94D11C81-24B0-4277-B718-4610A664BD2D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,5 +40,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FDA01A4D-653F-4917-925B-1E4A223764C8} = {94D11C81-24B0-4277-B718-4610A664BD2D}
+		{F8B80845-0F2C-4358-9A78-9B4827D8DF8B} = {94D11C81-24B0-4277-B718-4610A664BD2D}
 	EndGlobalSection
 EndGlobal
