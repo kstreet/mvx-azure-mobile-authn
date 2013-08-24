@@ -2,17 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace BeingTheWorst.MvxPlugins.AzureMobileAuthN.WindowsPhone
 {
     public class AuthenticationProvider : IAuthenticationProvider
     {
-        public AuthenticationResult Authenticate(AuthNProviderType providerType, AuthNProviderSettings providerSettings)
+        public Task<AuthenticationResult> Authenticate(AuthNProviderType providerType, AuthNProviderSettings providerSettings)
         {
-            // for now this is the synch slow network call that the plugin's cosumer will
-            // wrap in a Task so it can await it.  "LoginService" for example.
-            // maybe this part of the platform-specific plugin INCLUDES that
-            // service and Mvx Viewmodel?
+            throw new NotImplementedException();
         }
     }
 }
