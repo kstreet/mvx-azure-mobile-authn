@@ -27,10 +27,7 @@ namespace BeingTheWorst.MvxPlugins.AzureMobileAuthN.Services
 
             var authNProviderSettings = new AuthNProviderSettings
                 {
-                    UrlToAuthenticationProvider = "https://YOUR-AMS-SERVICE-NAME.azure-mobile.net/"
-
-                    //UrlToAuthenticationProvider = "https://YOUR-AMS-SERVICE-NAME.azure-mobile.net/",
-                    //ApplicationIdKeyFromProvider = "ENTER YOUR AZURE MOBILE SERVICE APPLICATION KEY"
+                    UrlToAuthenticationProvider = ConfigAzureMobileAuthN.AZURE_MOBILE_SERVICE_URL
                 };
 
             // TODO: should add some error checking of the provider we get sent from ViewModel/View

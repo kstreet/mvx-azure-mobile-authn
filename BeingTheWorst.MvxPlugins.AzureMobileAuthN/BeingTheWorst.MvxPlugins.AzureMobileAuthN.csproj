@@ -36,6 +36,7 @@
     <Compile Include="AuthenticationResult.cs" />
     <Compile Include="AuthNProviderSettings.cs" />
     <Compile Include="AuthNProviderType.cs" />
+    <Compile Include="ConfigAzureMobileAuthN.cs" />
     <Compile Include="IAuthenticationProvider.cs" />
     <Compile Include="PluginLoader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
