@@ -5,7 +5,8 @@ namespace BeingTheWorst.MvxPlugins.AzureMobileAuthN.WindowsPhone
 {
     public class AuthenticationProvider : IAuthenticationProvider
     {
-        public async Task<AuthenticationResult> Authenticate(AuthNProviderType providerType, AuthNProviderSettings providerSettings)
+        public async Task<AuthenticationResult> AuthenticateAsync(AuthNProviderType providerType,
+                                                                  AuthNProviderSettings providerSettings)
         {
             // setup the real Azure Mobile Services client provided by MS SDK
             var mobileSvcsClient = new
