@@ -1,4 +1,5 @@
 using Cirrious.CrossCore.IoC;
+using BeingTheWorst.MvxPlugins.AzureMobileAuthN.ViewModels;
 
 namespace AzureMobileAuthN.Sample.Core
 {
@@ -12,7 +13,7 @@ namespace AzureMobileAuthN.Sample.Core
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
 				
-            RegisterAppStart<ViewModels.FirstViewModel>();
+            RegisterAppStart<LoginViewModel>();
         }
     }
 }

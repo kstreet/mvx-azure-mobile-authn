@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using BeingTheWorst.MvxPlugins.AzureMobileAuthN.Services;
 using Cirrious.MvvmCross.ViewModels;
