@@ -1,8 +1,15 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using AzureMobileAuthN.Sample.WindowsPhone.Views;
 using BeingTheWorst.MvxPlugins.AzureMobileAuthN;
+using BeingTheWorst.MvxPlugins.AzureMobileAuthN.ViewModels;
 using BeingTheWorst.MvxPlugins.AzureMobileAuthN.WindowsPhone;
 using Cirrious.CrossCore;
 using Cirrious.CrossCore.Platform;
 using Cirrious.MvvmCross.ViewModels;
+using Cirrious.MvvmCross.Views;
 using Cirrious.MvvmCross.WindowsPhone.Platform;
 using Microsoft.Phone.Controls;
 
@@ -18,7 +25,27 @@ namespace AzureMobileAuthN.Sample.WindowsPhone
         {
             return new Core.App();
         }
-		
+
+        // Help the system find the LoginView for the LoginViewModel in the plugin's core
+        protected override void InitializeViewLookup()
+        {
+            var viewModelViewLookup = new Dictionary<Type, Type>
+            {
+                {typeof(LoginViewModel), typeof(LoginView)}
+            };
+
+            var container = Mvx.Resolve<IMvxViewsContainer>();
+            container.AddAll(viewModelViewLookup);
+        }
+
+        protected override Assembly[] GetViewModelAssemblies()
+        {
+            var toReturn = base.GetViewModelAssemblies().ToList();
+            toReturn.Add(typeof(LoginViewModel).Assembly);
+            return toReturn.ToArray();
+        }
+
+
         protected override IMvxTrace CreateDebugTrace()
         {
             // this one is default. Try to use custom to see what error is
@@ -56,5 +83,6 @@ namespace AzureMobileAuthN.Sample.WindowsPhone
             // Can also use the patterns with reflection over the 
             // whole DLL stuff for MANY registrations (as seen in Core's App.cs)
         }
+
     }
 }
