@@ -83,6 +83,5 @@ namespace AzureMobileAuthN.Sample.WindowsPhone
             // Can also use the patterns with reflection over the 
             // whole DLL stuff for MANY registrations (as seen in Core's App.cs)
         }
-
     }
 }

@@ -17,14 +17,14 @@ namespace BeingTheWorst.MvxPlugins.AzureMobileAuthN.Services
         public async Task<LoginResult> LoginAsync(AuthNProviderType providerType)
         {
             // TODO: determine best place to get the SPECIFICS per APP
-            // TODO: of the settings of the authN provider to use
-            // TODO: for now, hardcode
+            // TODO: for the settings of the authN provider to use
+            // TODO: for now, hardcode for testing
             // TODO: See the WshLst app as possible solution or see if Stuart has common settings approach xplat
-            // TODO: thought I saw him post about xplat settings which would be nice but  thougth it was UI/user related
+            // TODO: thought I saw him post about xplat settings which would be nice, but thougth it was UI/user related
 
             var authNProviderSettings = new AuthNProviderSettings
                 {
-                    UrlToAuthenticationProvider = "ENTER YOUR AZURE MOBILE SERVICE URL",
+                    UrlToAuthenticationProvider = "https://YOUR-AMS-SERVICE-NAME.azure-mobile.net/",
                     ApplicationIdKeyFromProvider = "ENTER YOUR AZURE MOBILE SERVICE APPLICATION KEY"
                 };
 
@@ -44,4 +44,3 @@ namespace BeingTheWorst.MvxPlugins.AzureMobileAuthN.Services
         }
     }
 }
-
