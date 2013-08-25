@@ -22,10 +22,15 @@ namespace BeingTheWorst.MvxPlugins.AzureMobileAuthN.Services
             // TODO: See the WshLst app as possible solution or see if Stuart has common settings approach xplat
             // TODO: thought I saw him post about xplat settings which would be nice, but thougth it was UI/user related
 
+            // TODO: Azure Application Key does not seem to be needed for AuthN to work...
+            // TODO: Determine usage and how random ppl can't use my AMS to authN as "me"
+
             var authNProviderSettings = new AuthNProviderSettings
                 {
-                    UrlToAuthenticationProvider = "https://YOUR-AMS-SERVICE-NAME.azure-mobile.net/",
-                    ApplicationIdKeyFromProvider = "ENTER YOUR AZURE MOBILE SERVICE APPLICATION KEY"
+                    UrlToAuthenticationProvider = "https://YOUR-AMS-SERVICE-NAME.azure-mobile.net/"
+
+                    //UrlToAuthenticationProvider = "https://YOUR-AMS-SERVICE-NAME.azure-mobile.net/",
+                    //ApplicationIdKeyFromProvider = "ENTER YOUR AZURE MOBILE SERVICE APPLICATION KEY"
                 };
 
             // TODO: should add some error checking of the provider we get sent from ViewModel/View

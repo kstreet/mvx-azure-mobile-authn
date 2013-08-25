@@ -9,9 +9,13 @@ namespace BeingTheWorst.MvxPlugins.AzureMobileAuthN.WindowsPhone
                                                                   AuthNProviderSettings providerSettings)
         {
             // setup the real Azure Mobile Services client provided by MS SDK
-            var mobileSvcsClient = new
-                MobileServiceClient(providerSettings.UrlToAuthenticationProvider,
-                                    providerSettings.ApplicationIdKeyFromProvider);
+            //var mobileSvcsClient = new
+            //    MobileServiceClient(providerSettings.UrlToAuthenticationProvider,
+            //                        providerSettings.ApplicationIdKeyFromProvider);
+
+            // try without sending key
+            var mobileSvcsClient = new 
+                MobileServiceClient(providerSettings.UrlToAuthenticationProvider);
 
             // default to MS account if whatever passed in is a no go
             // TODO: See Azure Mobile GitHub to see how they check for invalid Enum values
