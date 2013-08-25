@@ -7,6 +7,11 @@ namespace AzureMobileAuthN.Sample.Core
     {
         public override void Initialize()
         {
+
+            // TODO:  What is correct Syntax of
+            // CreatableTypes(Assembly) to that this "App Core PCL" can find the LoginService inside the plugin's core
+            // the "Service" is NOT inside the App's COre like it usually is.
+
             // TODO: will this find the LoginService provided in the plugin?
             CreatableTypes()
                 .EndingWith("Service")
