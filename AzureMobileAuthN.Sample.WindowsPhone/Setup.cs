@@ -45,14 +45,9 @@ namespace AzureMobileAuthN.Sample.WindowsPhone
             return toReturn.ToArray();
         }
 
-
         protected override IMvxTrace CreateDebugTrace()
         {
-            // this one is default. Try to use custom to see what error is
-            // return new DebugTrace();
-
-            //TODO: ok to keep this?
-            return new MyDebugTrace();
+            return new DebugTrace();
         }
 
         // this Initialize method is the last one called in setup initialization
