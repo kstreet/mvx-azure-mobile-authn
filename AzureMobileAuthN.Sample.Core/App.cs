@@ -6,6 +6,7 @@ namespace AzureMobileAuthN.Sample.Core
     {
         public override void Initialize()
         {
+            // TODO: will this find the LoginService provided in the plugin?
             CreatableTypes()
                 .EndingWith("Service")
                 .AsInterfaces()
