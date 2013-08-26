@@ -43,7 +43,7 @@ namespace BeingTheWorst.MvxPlugins.AzureMobileAuthN.ViewModels
         {
             get
             { 
-                // TODO: Add back passing string CommandParama when this works
+                // TODO: Old Param-less command and had async/await.  Not needed?
                 //_loginCommand = _loginCommand ?? new MvxCommand(async () => await DoLogin());
                 //return _loginCommand;
 
@@ -75,7 +75,7 @@ namespace BeingTheWorst.MvxPlugins.AzureMobileAuthN.ViewModels
                 // TODO: Review PS error handling approach and other things
 
                 //  App.Azure.LoginAsync(platform.Provider).ContinueWith((task) => HandleLoginResult(task, platform));
-                await _loginService.LoginAsync(authNProvider).ContinueWith((t) => HandleLoginResult(t));
+                await _loginService.LoginAsync(authNProvider).ContinueWith((task) => HandleLoginResult(task));
                 
             }
             catch (InvalidOperationException iop)
