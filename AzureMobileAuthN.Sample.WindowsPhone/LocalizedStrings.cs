@@ -1,6 +1,6 @@
-﻿using AzureMobileAuthN.Sample.WindowsPhone.Resources;
+﻿using AzureMobileAuthN.SampleApp.WindowsPhone.Resources;
 
-namespace AzureMobileAuthN.Sample.WindowsPhone
+namespace AzureMobileAuthN.SampleApp.WindowsPhone
 {
     /// <summary>
     /// Provides access to string resources.

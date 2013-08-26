@@ -9,8 +9,8 @@
     <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AzureMobileAuthN.Sample.WindowsPhone</RootNamespace>
-    <AssemblyName>AzureMobileAuthN.Sample.WindowsPhone</AssemblyName>
+    <RootNamespace>AzureMobileAuthN.SampleApp.WindowsPhone</RootNamespace>
+    <AssemblyName>AzureMobileAuthN.SampleApp.WindowsPhone</AssemblyName>
     <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
     <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
@@ -19,9 +19,9 @@
     </SupportedCultures>
     <XapOutputs>true</XapOutputs>
     <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
-    <XapFilename>AzureMobileAuthN.Sample.WindowsPhone_$(Configuration)_$(Platform).xap</XapFilename>
+    <XapFilename>AzureMobileAuthN.SampleApp.WindowsPhone_Debug_AnyCPU.xap</XapFilename>
     <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
-    <SilverlightAppEntry>AzureMobileAuthN.Sample.WindowsPhone.App</SilverlightAppEntry>
+    <SilverlightAppEntry>AzureMobileAuthN.SampleApp.WindowsPhone.App</SilverlightAppEntry>
     <ValidateXaml>true</ValidateXaml>
     <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
     <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
@@ -103,6 +103,9 @@
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
     <Compile Include="Setup.cs" />
+    <Compile Include="Views\HomeView.xaml.cs">
+      <DependentUpon>HomeView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
@@ -112,6 +115,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="Views\HomeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\LoginView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -152,9 +159,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AzureMobileAuthN.Sample.Core\AzureMobileAuthN.Sample.Core.csproj">
+    <ProjectReference Include="..\AzureMobileAuthN.Sample.Core\AzureMobileAuthN.SampleApp.Core.csproj">
       <Project>{41FE6772-5909-454B-8639-10AF1BCFEA63}</Project>
-      <Name>AzureMobileAuthN.Sample.Core</Name>
+      <Name>AzureMobileAuthN.SampleApp.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\BeingTheWorst.MvxPlugins.AzureMobileAuthN.WindowsPhone\BeingTheWorst.MvxPlugins.AzureMobileAuthN.WindowsPhone.csproj">
       <Project>{F8B80845-0F2C-4358-9A78-9B4827D8DF8B}</Project>

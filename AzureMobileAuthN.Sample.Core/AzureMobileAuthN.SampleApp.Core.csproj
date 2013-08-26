@@ -8,8 +8,8 @@
     <ProjectGuid>{41FE6772-5909-454B-8639-10AF1BCFEA63}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AzureMobileAuthN.Sample.Core</RootNamespace>
-    <AssemblyName>AzureMobileAuthN.Sample.Core</AssemblyName>
+    <RootNamespace>AzureMobileAuthN.SampleApp.Core</RootNamespace>
+    <AssemblyName>AzureMobileAuthN.SampleApp.Core</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Profile78</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -56,6 +56,9 @@
       <Project>{fda01a4d-653f-4917-925b-1e4a223764c8}</Project>
       <Name>BeingTheWorst.MvxPlugins.AzureMobileAuthN</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

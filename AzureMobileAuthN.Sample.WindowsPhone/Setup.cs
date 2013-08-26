@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using AzureMobileAuthN.Sample.WindowsPhone.Views;
+using AzureMobileAuthN.SampleApp.WindowsPhone.Views;
 using BeingTheWorst.MvxPlugins.AzureMobileAuthN;
 using BeingTheWorst.MvxPlugins.AzureMobileAuthN.ViewModels;
 using BeingTheWorst.MvxPlugins.AzureMobileAuthN.WindowsPhone;
@@ -13,7 +13,7 @@ using Cirrious.MvvmCross.Views;
 using Cirrious.MvvmCross.WindowsPhone.Platform;
 using Microsoft.Phone.Controls;
 
-namespace AzureMobileAuthN.Sample.WindowsPhone
+namespace AzureMobileAuthN.SampleApp.WindowsPhone
 {
     public class Setup : MvxPhoneSetup
     {
@@ -23,15 +23,21 @@ namespace AzureMobileAuthN.Sample.WindowsPhone
 
         protected override IMvxApplication CreateApp()
         {
-            return new Core.App();
+            return new SampleApp.Core.App();
         }
 
         // Help the system find the LoginView for the LoginViewModel in the plugin's core
         protected override void InitializeViewLookup()
         {
+            // TODO: At some point it would be nice to have an "official" way
+            // TODO: to tell the plugin WHICH one of the user-created Views
+            // TODO: should be navigated to after a successful login
+            // TODO: Hard code the names "HomeViewModel" and "HomeView" for now.
+
             var viewModelViewLookup = new Dictionary<Type, Type>
             {
-                {typeof(LoginViewModel), typeof(LoginView)}
+                {typeof(LoginViewModel), typeof(LoginView)},
+                {typeof(HomeViewModel), typeof(HomeView)}
             };
 
             var container = Mvx.Resolve<IMvxViewsContainer>();
@@ -42,6 +48,7 @@ namespace AzureMobileAuthN.Sample.WindowsPhone
         {
             var toReturn = base.GetViewModelAssemblies().ToList();
             toReturn.Add(typeof(LoginViewModel).Assembly);
+            toReturn.Add(typeof(HomeViewModel).Assembly);
             return toReturn.ToArray();
         }
 

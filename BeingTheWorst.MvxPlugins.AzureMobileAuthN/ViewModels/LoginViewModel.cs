@@ -99,12 +99,6 @@ namespace BeingTheWorst.MvxPlugins.AzureMobileAuthN.ViewModels
             {
                 Debug.WriteLine("LoginViewModel:DoLogin: finally in try catch...got here!");
             }
-
-            // TODO: Put this in the HandleLoginResult instead
-            // after login,
-            // go to home page or what?
-            // App.RootFrame.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
-
         }
 
         void HandleLoginResult(Task<LoginResult> task)
@@ -141,6 +135,11 @@ namespace BeingTheWorst.MvxPlugins.AzureMobileAuthN.ViewModels
                 AzureToken = task.Result.MobileServicesUserToken;
 
                 IsBusy = false;
+
+                // TODO: Want to include a default App "Home Page" that I can navigate to
+                // TODO: post login and let user change it or?
+                ShowViewModel<HomeViewModel>();
+
             }
             else
             {

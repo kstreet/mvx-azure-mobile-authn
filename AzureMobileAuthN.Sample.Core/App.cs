@@ -3,7 +3,7 @@ using BeingTheWorst.MvxPlugins.AzureMobileAuthN.Services;
 using Cirrious.CrossCore.IoC;
 using BeingTheWorst.MvxPlugins.AzureMobileAuthN.ViewModels;
 
-namespace AzureMobileAuthN.Sample.Core
+namespace AzureMobileAuthN.SampleApp.Core
 {
     public class App : Cirrious.MvvmCross.ViewModels.MvxApplication
     {

@@ -6,11 +6,11 @@ using System.Resources;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("AzureMobileAuthN.Sample.WindowsPhone")]
+[assembly: AssemblyTitle("AzureMobileAuthN.SampleApp.WindowsPhone")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("AzureMobileAuthN.Sample.WindowsPhone")]
+[assembly: AssemblyProduct("AzureMobileAuthN.SampleApp.WindowsPhone")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

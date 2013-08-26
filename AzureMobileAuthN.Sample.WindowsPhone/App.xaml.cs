@@ -6,9 +6,9 @@ using System.Windows.Markup;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
-using AzureMobileAuthN.Sample.WindowsPhone.Resources;
+using AzureMobileAuthN.SampleApp.WindowsPhone.Resources;
 
-namespace AzureMobileAuthN.Sample.WindowsPhone
+namespace AzureMobileAuthN.SampleApp.WindowsPhone
 {
     public partial class App : Application
     {

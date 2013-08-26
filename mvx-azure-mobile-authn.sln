@@ -9,9 +9,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AzureMobileAuthN.Plugin", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AzureMobileAuthN.Samples", "AzureMobileAuthN.Samples", "{5E1E9921-35DE-400F-8D10-7E3A02C868DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureMobileAuthN.Sample.Core", "AzureMobileAuthN.Sample.Core\AzureMobileAuthN.Sample.Core.csproj", "{41FE6772-5909-454B-8639-10AF1BCFEA63}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureMobileAuthN.SampleApp.Core", "AzureMobileAuthN.Sample.Core\AzureMobileAuthN.SampleApp.Core.csproj", "{41FE6772-5909-454B-8639-10AF1BCFEA63}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureMobileAuthN.Sample.WindowsPhone", "AzureMobileAuthN.Sample.WindowsPhone\AzureMobileAuthN.Sample.WindowsPhone.csproj", "{3D52F94C-ED56-41A7-88E6-93A89B196D99}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureMobileAuthN.SampleApp.WindowsPhone", "AzureMobileAuthN.Sample.WindowsPhone\AzureMobileAuthN.SampleApp.WindowsPhone.csproj", "{3D52F94C-ED56-41A7-88E6-93A89B196D99}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -74,8 +74,8 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{FDA01A4D-653F-4917-925B-1E4A223764C8} = {94D11C81-24B0-4277-B718-4610A664BD2D}
 		{F8B80845-0F2C-4358-9A78-9B4827D8DF8B} = {94D11C81-24B0-4277-B718-4610A664BD2D}
+		{FDA01A4D-653F-4917-925B-1E4A223764C8} = {94D11C81-24B0-4277-B718-4610A664BD2D}
 		{41FE6772-5909-454B-8639-10AF1BCFEA63} = {5E1E9921-35DE-400F-8D10-7E3A02C868DE}
 		{3D52F94C-ED56-41A7-88E6-93A89B196D99} = {5E1E9921-35DE-400F-8D10-7E3A02C868DE}
 	EndGlobalSection

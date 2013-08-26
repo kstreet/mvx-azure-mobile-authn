@@ -1,5 +1,5 @@
 <views:MvxPhonePage
-    x:Class="AzureMobileAuthN.Sample.WindowsPhone.Views.LoginView"
+    x:Class="AzureMobileAuthN.SampleApp.WindowsPhone.Views.LoginView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"

@@ -2,7 +2,7 @@ using System;
 using System.Diagnostics;
 using Cirrious.CrossCore.Platform;
 
-namespace AzureMobileAuthN.Sample.WindowsPhone
+namespace AzureMobileAuthN.SampleApp.WindowsPhone
 {
     public class DebugTrace : IMvxTrace
     {
