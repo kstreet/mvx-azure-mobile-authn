@@ -126,8 +126,6 @@ namespace BeingTheWorst.MvxPlugins.AzureMobileAuthN.ViewModels
                 // maybe that is where we put stuff in the "AppViewModel"??
 
 
-                //Navigate to the Lists view
-                // RequestNavigate<WishListsViewModel>();
 
                 Debug.WriteLine("Hey Made it to Handle Login using Continue With!");
 
@@ -135,6 +133,11 @@ namespace BeingTheWorst.MvxPlugins.AzureMobileAuthN.ViewModels
                 AzureToken = task.Result.MobileServicesUserToken;
 
                 IsBusy = false;
+
+
+                // TODO: Older syntaxt or something different?
+                //Navigate to the Lists view
+                // RequestNavigate<WishListsViewModel>();
 
                 // TODO: Want to include a default App "Home Page" that I can navigate to
                 // TODO: post login and let user change it or?
@@ -147,7 +150,7 @@ namespace BeingTheWorst.MvxPlugins.AzureMobileAuthN.ViewModels
                 // TODO: What should be done when this happens? Just message and sit at login screen?
                 //Show Error
                 //ReportError("Login Failed!");
-                Debug.WriteLine("Ooppps! Made it back to LoginViewModel but LoginResult was null!");
+                Debug.WriteLine("Ooopps! Made it back to LoginViewModel but LoginResult was null!");
 
                 // TODO: Seems to just be sitting on LoginView if back was hit
                 // TODO: Should I just all Logout to try to clear things
