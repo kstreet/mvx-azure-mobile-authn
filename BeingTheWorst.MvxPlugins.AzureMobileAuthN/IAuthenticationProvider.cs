@@ -8,5 +8,7 @@ namespace BeingTheWorst.MvxPlugins.AzureMobileAuthN
         // MS Task/Async NuGet support is restricted to Windows-only BCL license!
         Task<AuthenticationResult> AuthenticateAsync(AuthNProviderType providerType,
                                                      AuthNProviderSettings providerSettings);
+
+        void Logout();
     }
 }

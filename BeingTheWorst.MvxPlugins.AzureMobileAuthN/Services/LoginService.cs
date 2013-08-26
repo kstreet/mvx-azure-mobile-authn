@@ -25,6 +25,9 @@ namespace BeingTheWorst.MvxPlugins.AzureMobileAuthN.Services
             // TODO: Azure Application Key does not seem to be needed for AuthN to work...
             // TODO: Determine usage and how random ppl can't use my AMS to authN as "me"
 
+            // force a logout on the mobile services client and  clear user profile 
+            _authNProvider.Logout();
+
             var authNProviderSettings = new AuthNProviderSettings
                 {
                     UrlToAuthenticationProvider = ConfigAzureMobileAuthN.AZURE_MOBILE_SERVICE_URL
@@ -35,14 +38,28 @@ namespace BeingTheWorst.MvxPlugins.AzureMobileAuthN.Services
 
             var authNResult = await _authNProvider.AuthenticateAsync(providerType, authNProviderSettings);
 
-            var loginResult = new LoginResult
+            if (authNResult != null)
             {
-                ProviderName = authNResult.ProviderName,
-                IdentityString = authNResult.IdentityString,
-                MobileServicesUserToken = authNResult.MobileServicesUserToken
-            };
+                var loginResult = new LoginResult
+                {
+                    ProviderName = authNResult.ProviderName,
+                    IdentityString = authNResult.IdentityString,
+                    MobileServicesUserToken = authNResult.MobileServicesUserToken
+                };
 
-            return loginResult;
+                return loginResult;
+            }
+            else
+            {
+                // TODO: Something bad happend
+                return null;
+            }
+
+        }
+
+        public void Logout()
+        {
+            _authNProvider.Logout();
         }
     }
 }

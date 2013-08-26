@@ -61,10 +61,6 @@ namespace BeingTheWorst.MvxPlugins.AzureMobileAuthN.ViewModels
             // set our public IsBusy property (to fire our bounded events - progress bars etc)
             IsBusy = true;
 
-            // TODO: Probably want to add something that forces a Logout on underlying Azure client
-            // before login again
-            // TODO: Like WshLst App.Logout.
-
             // Parse the selected Azure Mobile authentication provider that was passed as a View CommandParameter
             var authNProvider = 
                 (AuthNProviderType) Enum.Parse(typeof (AuthNProviderType), authenticationProvider, true);
@@ -84,6 +80,10 @@ namespace BeingTheWorst.MvxPlugins.AzureMobileAuthN.ViewModels
             }
             catch (InvalidOperationException iop)
             {
+                // TODO: if I try to login to Twitter and click back button on WP8
+                // TODO: then System.InvalidOperationException is thrown but is NOT caught here!??  Why?
+                // TODO: Must the try catch be in the platform-specific authprovider?
+
                 //user cancelled so try again
                 //MessageBox.Show("You must login to access the application.", "Please try again", MessageBoxButton.OK);
                 System.Diagnostics.Debug.WriteLine(
@@ -109,7 +109,6 @@ namespace BeingTheWorst.MvxPlugins.AzureMobileAuthN.ViewModels
 
         void HandleLoginResult(Task<LoginResult> task)
         {
-            IsBusy = false;
 
             if (task.Status == TaskStatus.RanToCompletion 
                 && task.Result != null 
@@ -141,12 +140,23 @@ namespace BeingTheWorst.MvxPlugins.AzureMobileAuthN.ViewModels
                 UserIdentity = task.Result.IdentityString;
                 AzureToken = task.Result.MobileServicesUserToken;
 
+                IsBusy = false;
             }
             else
             {
                 // TODO: Determine Error handling approach
+                // TODO: What should be done when this happens? Just message and sit at login screen?
                 //Show Error
                 //ReportError("Login Failed!");
+                Debug.WriteLine("Ooppps! Made it back to LoginViewModel but LoginResult was null!");
+
+                // TODO: Seems to just be sitting on LoginView if back was hit
+                // TODO: Should I just all Logout to try to clear things
+                // TODO: after some kind of message and they are ready to try again with a provider?
+
+                _loginService.Logout();
+
+                IsBusy = false;
             }
         }
     }
