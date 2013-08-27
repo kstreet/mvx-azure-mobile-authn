@@ -37,18 +37,18 @@ namespace AzureMobileAuthN.SampleApp.Core
 
         public class CustomAppStart : MvxNavigatingObject, IMvxAppStart
         {
-            private readonly ILoginService _service;
+            private readonly ILoginService _loginService;
 
 
             // TODO: In my case I may want to be using IAuthenticationProvider instead? TBD.
-            public CustomAppStart(ILoginService service)
+            public CustomAppStart(ILoginService loginService)
             {
-                _service = service;
+                _loginService = loginService;
             }
 
             public void Start(object hint = null)
             {
-                // if (!_service.IsLoggedIn)
+                // if (!_loginService.IsLoggedIn)
                 if (false)
                 {
                     ShowViewModel<LoginViewModel>();
