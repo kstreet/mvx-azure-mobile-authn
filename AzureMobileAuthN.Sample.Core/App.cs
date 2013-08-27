@@ -1,7 +1,9 @@
 using System.Reflection;
 using BeingTheWorst.MvxPlugins.AzureMobileAuthN.Services;
+using Cirrious.CrossCore;
 using Cirrious.CrossCore.IoC;
 using BeingTheWorst.MvxPlugins.AzureMobileAuthN.ViewModels;
+using Cirrious.MvvmCross.ViewModels;
 
 namespace AzureMobileAuthN.SampleApp.Core
 {
@@ -26,7 +28,36 @@ namespace AzureMobileAuthN.SampleApp.Core
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
 
-            RegisterAppStart<LoginViewModel>();
+            // TODO:  Is this syntax right?
+            // TODO:  Seems like it, it's working.
+            // TODO: Also see http://stackoverflow.com/questions/17471084/using-nfc-with-mvx-wp8-application
+            //RegisterAppStart<LoginViewModel>();
+            RegisterAppStart(new CustomAppStart(Mvx.Resolve<ILoginService>()));
+        }
+
+        public class CustomAppStart : MvxNavigatingObject, IMvxAppStart
+        {
+            private readonly ILoginService _service;
+
+
+            // TODO: In my case I may want to be using IAuthenticationProvider instead? TBD.
+            public CustomAppStart(ILoginService service)
+            {
+                _service = service;
+            }
+
+            public void Start(object hint = null)
+            {
+                // if (!_service.IsLoggedIn)
+                if (false)
+                {
+                    ShowViewModel<LoginViewModel>();
+                }
+                else
+                {
+                    ShowViewModel<HomeViewModel>();
+                }
+            }
         }
     }
 }
