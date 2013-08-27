@@ -43,10 +43,12 @@ namespace AzureMobileAuthN.SampleApp.Core
                 // if (!_loginService.IsLoggedIn)
                 if (true)
                 {
+                    // not logged in, so show the plugin's Login experience
                     ShowViewModel<LoginViewModel>();
                 }
                 else
                 {
+                    // the name of the View Model to show if already logged in
                     ShowViewModel<HomeViewModel>();
                 }
             }
