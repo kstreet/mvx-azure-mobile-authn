@@ -135,7 +135,7 @@ namespace BeingTheWorst.MvxPlugins.AzureMobileAuthN.ViewModels
                 IsBusy = false;
 
 
-                // TODO: Older syntaxt or something different?
+                // TODO: Older syntax or something different?
                 //Navigate to the Lists view
                 // RequestNavigate<WishListsViewModel>();
 

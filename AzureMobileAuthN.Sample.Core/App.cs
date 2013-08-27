@@ -11,34 +11,26 @@ namespace AzureMobileAuthN.SampleApp.Core
     {
         public override void Initialize()
         {
-            // TODO:  What is correct Syntax of
-            // CreatableTypes(Assembly) to that this "App Core PCL" can find the LoginService inside the plugin's core
-            // the "Service" is NOT inside the App's Core like it usually is
-            // http://stackoverflow.com/questions/16704224/mvvmcross-with-two-core-libraries
-
-            // TODO: This syntax seem to work but is this the correct/best syntax for this for xplat?
+            // the "LoginService" is NOT inside the App's Core like it usually is, it's in the Plugin
             CreatableTypes(typeof(LoginService).GetTypeInfo().Assembly)
                 .EndingWith("Service")
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
 
-            // TODO: will this find the LoginService provided in the plugin?
-            CreatableTypes()
-                .EndingWith("Service")
-                .AsInterfaces()
-                .RegisterAsLazySingleton();
+            // TODO: Only need this if there are Services to be found in this App's DLL
+            //CreatableTypes()
+            //    .EndingWith("Service")
+            //    .AsInterfaces()
+            //    .RegisterAsLazySingleton();
 
-            // TODO:  Is this syntax right?
-            // TODO:  Seems like it, it's working.
-            // TODO: Also see http://stackoverflow.com/questions/17471084/using-nfc-with-mvx-wp8-application
-            //RegisterAppStart<LoginViewModel>();
+
+            // Determine which ViewModel to start the App with using CustomAppStart
             RegisterAppStart(new CustomAppStart(Mvx.Resolve<ILoginService>()));
         }
 
         public class CustomAppStart : MvxNavigatingObject, IMvxAppStart
         {
             private readonly ILoginService _loginService;
-
 
             // TODO: In my case I may want to be using IAuthenticationProvider instead? TBD.
             public CustomAppStart(ILoginService loginService)
@@ -49,7 +41,7 @@ namespace AzureMobileAuthN.SampleApp.Core
             public void Start(object hint = null)
             {
                 // if (!_loginService.IsLoggedIn)
-                if (false)
+                if (true)
                 {
                     ShowViewModel<LoginViewModel>();
                 }

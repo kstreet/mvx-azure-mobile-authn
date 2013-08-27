@@ -7,7 +7,7 @@ namespace BeingTheWorst.MvxPlugins.AzureMobileAuthN
         // can't use Task<AuthenticationResult> and support WP 7.5/7.1 because
         // MS Task/Async NuGet support is restricted to Windows-only BCL license!
         Task<AuthenticationResult> AuthenticateAsync(AuthNProviderType providerType,
-                                                     AuthNProviderSettings providerSettings);
+                                                     IAuthNProviderSettings providerSettings);
 
         void Logout();
     }

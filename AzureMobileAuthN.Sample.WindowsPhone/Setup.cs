@@ -8,6 +8,7 @@ using BeingTheWorst.MvxPlugins.AzureMobileAuthN.ViewModels;
 using BeingTheWorst.MvxPlugins.AzureMobileAuthN.WindowsPhone;
 using Cirrious.CrossCore;
 using Cirrious.CrossCore.Platform;
+using Cirrious.CrossCore.Plugins;
 using Cirrious.MvvmCross.ViewModels;
 using Cirrious.MvvmCross.Views;
 using Cirrious.MvvmCross.WindowsPhone.Platform;
@@ -64,26 +65,28 @@ namespace AzureMobileAuthN.SampleApp.WindowsPhone
 
             // now let's tell setup that whenever anyone asks for an IAuthenticationProvider
             // from this client application, give this same single instance (Singleton)
-            // of AuthenticationProvider
+            // of AuthenticationProvider:
 
             // original approach used in N+31 sample
-            // TODO: but should I be using new instances for login code with dynamic syntax below?
-            //Mvx.RegisterSingleton<IAuthenticationProvider>
-            //    (new AuthenticationProvider());
-
+            // TODO: but should I be using new instances for login code with dynamic syntax?
             Mvx.RegisterSingleton<IAuthenticationProvider>
-            (new AuthenticationProvider());
+                (new AuthenticationProvider());
 
-            // alternatively you can use Lazy loading of same thing
-            //Mvx.RegisterSingleton<IAuthenticationProvider>
-            //    (() => new AuthenticationProvider());
+            // TODO:  Which is better in this case? This "Lazy" one or the one above?
+            // Mvx.RegisterSingleton<IAuthenticationProvider>(() => new AuthenticationProvider());
+        }
 
-            // alternatively you can use dynamic loading of NEW INSTANCES (no instance sharing) of these things:
-            // TODO: WHich MAY be what we actually want for LOGIN type code!  TBD.
-            // Mvx.RegisterType<IAuthenticationProvider, AuthenticationProvider>();
-
-            // Can also use the patterns with reflection over the 
-            // whole DLL stuff for MANY registrations (as seen in Core's App.cs)
+        // Configure the Azure Mobile Services Plugin with the Configuration it needs
+        protected override IMvxPluginConfiguration GetPluginConfiguration(Type plugin)
+        {
+            if (plugin == typeof (BeingTheWorst.MvxPlugins.AzureMobileAuthN.PluginLoader))
+            {
+                return new BeingTheWorst.MvxPlugins.AzureMobileAuthN.AzureMobileAuthNConfiguration
+                    {
+                        AzureMobileServiceUrl = "https://YOURSITE.azure-mobile.net"
+                    };
+            }
+            return base.GetPluginConfiguration(plugin);
         }
     }
 }

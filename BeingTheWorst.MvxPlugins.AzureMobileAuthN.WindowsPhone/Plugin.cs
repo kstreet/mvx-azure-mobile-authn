@@ -15,8 +15,6 @@ namespace BeingTheWorst.MvxPlugins.AzureMobileAuthN.WindowsPhone
 
             // whenever someone asks for an IAuthenticationProvider on THIS platform
             // give them the AuthenticationProvider implemented in this DLL
-
-            // TODO: should this be Mvx.RegisterSingleton instead??
             Mvx.RegisterType<IAuthenticationProvider, AuthenticationProvider>();
         }
     }

@@ -15,14 +15,9 @@ namespace BeingTheWorst.MvxPlugins.AzureMobileAuthN.WindowsPhone
         private UserProfile _userProfile;
 
         public async Task<AuthenticationResult> AuthenticateAsync(AuthNProviderType providerType,
-                                                                  AuthNProviderSettings providerSettings)
+                                                                  IAuthNProviderSettings providerSettings)
         {
-            // setup the real Azure Mobile Services client provided by MS SDK
-            //var mobileSvcsClient = new
-            //    MobileServiceClient(providerSettings.UrlToAuthenticationProvider,
-            //                        providerSettings.ApplicationIdKeyFromProvider);
-
-            // try without sending key
+            // try without sending AMS Application key for now
             _mobileSvcsClient = new 
                 MobileServiceClient(providerSettings.UrlToAuthenticationProvider);
 
@@ -49,12 +44,9 @@ namespace BeingTheWorst.MvxPlugins.AzureMobileAuthN.WindowsPhone
                     break;
             }
 
-
-
             try
             {
                 await _mobileSvcsClient.LoginAsync(azmobProvider);
-
 
                 // TODO: How do I want to use User Profile Stuff here?
                 // TODO: I will doouble set stff to see how it feels to use each
