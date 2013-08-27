@@ -30,7 +30,8 @@ namespace BeingTheWorst.MvxPlugins.AzureMobileAuthN.Services
 
             var authNProviderSettings = new AuthNProviderSettings
                 {
-                    UrlToAuthenticationProvider = ConfigAzureMobileAuthN.AZURE_MOBILE_SERVICE_URL
+                    UrlToAuthenticationProvider = 
+                        AzureMobileAuthNConfiguration.AZURE_MOBILE_SERVICE_URL
                 };
 
             // TODO: should add some error checking of the provider we get sent from ViewModel/View

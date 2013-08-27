@@ -1,6 +1,6 @@
 ﻿namespace BeingTheWorst.MvxPlugins.AzureMobileAuthN
 {
-    public class ConfigAzureMobileAuthN
+    public class AzureMobileAuthNConfiguration
     {
         public const string AZURE_MOBILE_SERVICE_URL = "https://YOURSITE.azure-mobile.net";
 
